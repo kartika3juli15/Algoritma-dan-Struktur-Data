@@ -11,6 +11,8 @@ public class Array_17 {
         String[] indeks = new String[matkul.length];
         double[] setara = new double[matkul.length];
         int i;
+        double nilaisks = 0;
+        double nilaibobot=0;
 
         for (i = 1; i < matkul.length; i++) {
             System.out.print(i + ". Masukkan Nilai Angka untuk MK " + matkul[i] + " : ");
@@ -38,6 +40,7 @@ public class Array_17 {
                 setara[i] = 0;
             } 
         }
+        System.out.println ();
         System.out.println("HASIL KONVERSI NILAI");
         System.out.println ("--------------------------------------------------------------------------------------------------------------------------------");
         System.out.printf("| %-5s| %-50s | %-15s | %-15s | %-15s | %-10s |", 
@@ -50,7 +53,18 @@ public class Array_17 {
                     System.out.println("");
 }
 System.out.println ("--------------------------------------------------------------------------------------------------------------------------------");
+
+for (i = 1; i < matkul.length; i++){
+nilaisks += setara[i] * sks[i];
+nilaibobot += sks[i];
+}
+if (nilaibobot > 0) {
+    double IP = nilaisks / nilaibobot;
+    System.out.println("IP Semester Anda : " + IP);
+} else {
+    System.out.println("terjadi kesalahan input nilai matkul");
+}
+System.out.println ("--------------------------------------------------------------------------------------------------------------------------------");
 }
 }
-    
 
